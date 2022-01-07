@@ -55,9 +55,9 @@ sub transform{
 #chdir("../");
 print(qx(pwd),"\n");
 print(" Transforming .... \n\n");
-qx(./openverify/transform.sh);
-qx(./openverify/transform.sh);
-qx(./openverify/transform.sh);
+qx(./openverify/transform.linux.sh);
+qx(./openverify/transform.linux.sh);
+qx(./openverify/transform.linux.sh);
 print(" Removing openverify folder  ....",qx(pwd)," \n\n");
 rmtree("openverify");
 
