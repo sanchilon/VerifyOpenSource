@@ -1,0 +1,14 @@
+name: OpenSrc
+on:
+  workflow_dispatch:
+jobs:
+  opensrc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Prepare
+        run: ./prepare.pl
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
