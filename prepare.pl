@@ -13,6 +13,7 @@ BEGIN {
 }
 my $projRoot = "./OntarioVerify";
 
+sub config;
 sub initialize;
 sub transform;
 sub cleanup;
@@ -20,7 +21,7 @@ sub diffbrnch;
 sub pushbranch;
 sub zipit;
 
-
+config();
 initialize();
 transform();
 #cleanup();
@@ -30,8 +31,13 @@ transform();
 
 
 #################################################################
+sub config {
+qx(git config --global user.name '${GITHUB_ACTOR}');
+}
+
 sub initialize{
 my ($version) = @_;
+   
   qx(rm -rf OntarioVerify);
   qx(git rm --cached -rf OntarioVerify);
   qx(rm -rf .git/modules && rm -f ./gitmodules);
