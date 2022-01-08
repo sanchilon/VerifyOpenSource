@@ -15,7 +15,7 @@ jobs:
       - name: CD
         run : cd VerifyOpenSource && ls -al
       - name: PREPARE
-        run: ./VerifyOpenSource/prepare.pl
+        run: echo `pwd`
      # - uses: actions/checkout@v2
      #   with:
      #     repository: ongov/OntarioVerify
