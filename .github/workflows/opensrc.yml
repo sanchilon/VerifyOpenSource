@@ -21,12 +21,12 @@ jobs:
       #    ref: refs/heads/main
       #- name: cd
       #  run: cd ./VerifyOpenSource && pwd
-      #- uses: actions/checkout@v2
-       # with:
-       #   repository: ongov/OntarioVerify
-       #   path: ./Verify
-       #   ref: refs/heads/main
-        #  repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+        with:
+          repository: ongov/OntarioVerify
+          path: ./Verify
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
       #- name: Run Prepare
       #  run: ./prepare.pl
       #- name: Git hub parameters
