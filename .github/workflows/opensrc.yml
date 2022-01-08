@@ -14,7 +14,7 @@ jobs:
       - name: CD
         run : ls -al
       - name: PREPARE
-        run: pwd
+        run: ./prepare.pl
      # - uses: actions/checkout@v2
      #   with:
      #     repository: ongov/OntarioVerify
