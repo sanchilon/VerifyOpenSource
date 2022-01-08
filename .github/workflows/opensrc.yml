@@ -12,9 +12,9 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: CD
-        run : cd VerifyOpenSource && ls -al
+        run : ls -al
       - name: PREPARE
-        run: echo `pwd`
+        run: pwd
      # - uses: actions/checkout@v2
      #   with:
      #     repository: ongov/OntarioVerify
