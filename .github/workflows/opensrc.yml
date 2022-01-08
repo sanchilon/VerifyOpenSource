@@ -10,7 +10,7 @@ jobs:
         with:
           repository: ongov/OntarioVerify
           path: ./Verify
-          ref: main
+          ref: refs/heads/main
       #- uses: actions/checkout@v2
         #with:
         #  repo-token: ${{ secrets.GITHUB_TOKEN }}
