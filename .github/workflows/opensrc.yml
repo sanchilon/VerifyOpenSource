@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      #- name: Run Prepare
-      #  run: ./prepare.pl
+      - name: Run Prepare
+        run: ./prepare.pl
       - name: Git hub parameters
         run: echo "${GITHUB_ACTOR}"
       - name: Run a multi-line script
