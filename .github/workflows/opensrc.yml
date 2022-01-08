@@ -10,8 +10,8 @@ jobs:
         run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - name: sec
         run: echo ${{secrets.OPNSRC}} 
-      - name: Clone
-        run: git clone https://github.com/ongov/OntarioVerify.git 
+      #- name: Clone
+      #  run: git clone https://github.com/ongov/OntarioVerify.git 
       #- uses: actions/checkout@v2
       #  with:
       #    repository: sanchilon/VerifyOpenSource
