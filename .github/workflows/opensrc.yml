@@ -12,16 +12,20 @@ jobs:
           path: ./VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - uses: actions/checkout@v2
-        with:
-          repository: ongov/OntarioVerify
-          path: ./Verify
-          ref: refs/heads/main
-          token: ${{ secrets.PAT }}
       - name: CD
-        run: cd VerifyOpenSource && ls -al
-      - name: CD OntarioVerify
-        run: cd Verify && ls -al
+        run : cd VerifyOpenSource && ls -al
+      - name: PREPARE
+        run: ./prepare.pl
+     # - uses: actions/checkout@v2
+     #   with:
+     #     repository: ongov/OntarioVerify
+     #     path: ./Verify
+     #     ref: refs/heads/main
+     #     token: ${{ secrets.PAT }}
+     # - name: CD
+     #   run: cd VerifyOpenSource && ls -al
+     # - name: CD OntarioVerify
+     #   run: cd Verify && ls -al
       #- name: Run a multi-line script
       #  run: |
       #    echo Add other actions to build,
