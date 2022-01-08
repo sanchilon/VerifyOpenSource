@@ -32,7 +32,7 @@ transform();
 
 #################################################################
 sub config {
-qx(git config --global user.name '${GITHUB_ACTOR}');
+qx(git config --global user.name "sanchilon");
 }
 
 sub initialize{
