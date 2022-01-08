@@ -6,10 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: WF_Env
     steps:
+      - uses: actions/checkout@main
+        with:
+          repository: ongov/Verify
+          path: ./Verify
       - uses: actions/checkout@v2
         #with:
         #  repo-token: ${{ secrets.GITHUB_TOKEN }}
-          
       - name: Run Prepare
         run: ./prepare.pl
       #- name: Git hub parameters
