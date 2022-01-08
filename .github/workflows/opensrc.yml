@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: WF_Env
     steps:
-      - name: Init
-        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - name: sec
-        run: echo ${{secrets.OPNSRC}} 
-      - name: actor
-        run: echo ${GITHUB_ACTOR} ${GITHUB_FLOW}
+      #- name: Init
+      #  run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
+      #- name: sec
+      #  run: echo ${{secrets.OPNSRC}} 
+      #- name: actor
+      #  run: echo ${GITHUB_ACTOR} ${GITHUB_FLOW}
       #- name: Clone
       #  run: git clone https://github.com/ongov/OntarioVerify.git 
       #- uses: actions/checkout@v2
@@ -23,12 +23,18 @@ jobs:
       #  run: cd ./VerifyOpenSource && pwd
       - uses: actions/checkout@v2
         with:
+          repository: sanchilon/VerifyOpenSource
+          path: ./VerifyOpenSource
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      - uses: actions/checkout@v2
+        with:
           repository: ongov/OntarioVerify
           path: ./Verify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      #- name: Run Prepare
-      #  run: ./prepare.pl
+      - name: CD
+        run: cd VerifyOpenSource && ls -al
       #- name: Git hub parameters
       #  run: echo "${GITHUB_ACTOR}"
       #- name: Run a multi-line script
