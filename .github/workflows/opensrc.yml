@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: WF_Env
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
         with:
           repository: ongov/Verify
           path: ./Verify
+          ref: main
       #- uses: actions/checkout@v2
         #with:
         #  repo-token: ${{ secrets.GITHUB_TOKEN }}
