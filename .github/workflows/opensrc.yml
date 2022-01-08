@@ -22,7 +22,7 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: CD
-        run : cd ../../ && ls -al
+        run : cd ../ && ls -al
      # - name: PREPARE
      #   run: ./prepare.pl
      # - name: CD
