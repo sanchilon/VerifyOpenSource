@@ -29,7 +29,7 @@ jobs:
            rm -rf ./a/OntarioVerify/.git && \
            rm -rf ./a/OntarioVerify/.github && \
            ls -al ./a && \
-           cp -R openverify ./a/OntarioVerify && \
+           cp -R ./a/openverify ./a/OntarioVerify && \
            ls -al ./a/OntarioVerify && \
            ./a/OntarioVerify/openverify/transform.linux.sh
      # - name: PREPARE
