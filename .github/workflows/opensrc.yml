@@ -8,11 +8,13 @@ jobs:
     steps:
       - name: Init
         run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - uses: actions/checkout@v2
-        with:
-          repository: sanchilon/VerifyOpenSource
-          path: ./VerifyOpenSource
-          ref: refs/heads/main
+      - name: Clone
+        run: git clone https://github.com/ongov/OntarioVerify
+      #- uses: actions/checkout@v2
+      #  with:
+      #    repository: sanchilon/VerifyOpenSource
+      #    path: ./VerifyOpenSource
+      #    ref: refs/heads/main
       - name: cd
         run: cd ./VerifyOpenSource && pwd
       - uses: actions/checkout@v2
