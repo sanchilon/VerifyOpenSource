@@ -11,7 +11,7 @@ jobs:
       - name: sec
         run: echo ${{secrets.OPNSRC}} 
       - name: actor
-        run: echo ${{env.GITHUB_ACTOR}}
+        run: echo ${GITHUB_ACTOR} ${GITHUB_FLOW}
       #- name: Clone
       #  run: git clone https://github.com/ongov/OntarioVerify.git 
       #- uses: actions/checkout@v2
@@ -21,11 +21,11 @@ jobs:
       #    ref: refs/heads/main
       #- name: cd
       #  run: cd ./VerifyOpenSource && pwd
-      - uses: actions/checkout@v2
-        with:
-          repository: ongov/OntarioVerify
-          path: ./Verify
-          ref: refs/heads/main
+      #- uses: actions/checkout@v2
+       # with:
+       #   repository: ongov/OntarioVerify
+       #   path: ./Verify
+       #   ref: refs/heads/main
         #  repo-token: ${{ secrets.GITHUB_TOKEN }}
       #- name: Run Prepare
       #  run: ./prepare.pl
