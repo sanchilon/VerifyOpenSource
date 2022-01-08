@@ -12,7 +12,7 @@ jobs:
           path: ./VerifyOpenSource
           ref: refs/heads/main
       - name: cd
-        run: cd ./VerifyOpenSource && ls -al
+        run: cd ./VerifyOpenSource && ./prepare.pl
       #- uses: actions/checkout@v2
       #  with:
       #    repository: ongov/OntarioVerify
