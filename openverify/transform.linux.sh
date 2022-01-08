@@ -143,7 +143,7 @@ if [[ $files ]]; then
     done
 fi
 
-cp -R "../${BACKUP_FOLDER}" ./.git
+#cp -R "../${BACKUP_FOLDER}" ./.git
 
 #yarn
 #yarn prettier -w --bracket-same-line 'src' '!src/__mocks__'
