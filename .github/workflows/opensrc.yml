@@ -23,6 +23,9 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: CD
         run : ls -al ./a && ls -al ./b
+      - name: COPY
+        run: |
+           cp -R ./b ./a/OntarioVerify && rm -rf ./a/OntarioVerify/.git && rm -rf ./a/OntarioVerify/.github && ls -al ./a
      # - name: PREPARE
      #   run: ./prepare.pl
      # - name: CD
