@@ -6,13 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     environment: WF_Env
     steps:
+      #- uses: actions/checkout@v2
+      #  with:
+      #    repository: ongov/OntarioVerify
+      #    path: ./Verify
+      #    ref: refs/heads/main
       - uses: actions/checkout@v2
         with:
-          repository: ongov/OntarioVerify
-          path: ./Verify
+          repository: sanchilon/VerifyOpenSource
+          path: ./VerifyOpenSource
           ref: refs/heads/main
-      #- uses: actions/checkout@v2
-        #with:
         #  repo-token: ${{ secrets.GITHUB_TOKEN }}
       #- name: Run Prepare
       #  run: ./prepare.pl
