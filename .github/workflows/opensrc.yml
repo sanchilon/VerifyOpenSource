@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: ongov/Verify
+          repository: ongov/OntarioVerify
           path: ./Verify
           ref: main
       #- uses: actions/checkout@v2
