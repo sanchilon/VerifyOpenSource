@@ -13,10 +13,14 @@ jobs:
           repository: sanchilon/VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
+      - name: Checkout submodules
+        uses: srt32/git-actions@v0.0.3
+        with:
+          args: git submodule add https://github.com/ongov/OntarioVerify
       - name: CD
         run : ls -al
-      - name: PREPARE
-        run: ./prepare.pl
+     # - name: PREPARE
+     #   run: ./prepare.pl
      # - uses: actions/checkout@v2
      #   with:
      #     repository: ongov/OntarioVerify
