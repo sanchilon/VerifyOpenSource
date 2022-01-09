@@ -32,5 +32,10 @@ jobs:
           cp -R ./VerifyOpenSource/openverify ./VerifyOpenSource/OntarioVerify && \
           ./VerifyOpenSource/OntarioVerify/openverify/transform.linux.sh
       - name: PUSH
-        run: cd ./VerifyOpenSource && git switch -C test1 && git push -d origin test1 && git push -u origin test1
+        run: |
+             cd ./VerifyOpenSource && \
+             git switch -C test1 && \
+             git commit -am "added OntarioVerify" && \
+             git push -d origin test1 && \
+             git push -u origin test1
           
