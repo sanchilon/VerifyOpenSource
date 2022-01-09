@@ -35,7 +35,7 @@ jobs:
         run: |
              cd ./VerifyOpenSource && \
              git switch -C test1 && \
-             git add OntarioVerify && \
+             git add . && \
              git commit -m "added OntarioVerify" && \
              git push -d origin test1 && \
              git push -u origin test1
