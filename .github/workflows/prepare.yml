@@ -8,10 +8,16 @@ jobs:
     steps:
       - name: CONFIG
         run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - uses: actions/checkout@v2
+      - name: CHECKOUT
+        uses: actions/checkout@v2
         with:
           repository: sanchilon/VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - name: RUN
-        run: ./prepare.pl
+      - name: CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        run: |
+          gh auth login --with-token
+      #- name: RUN
+      #  run: ./prepare.pl
