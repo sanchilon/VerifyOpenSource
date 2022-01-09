@@ -14,12 +14,13 @@ jobs:
           repository: sanchilon/VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - name: CLI
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }} 
+      - name: CLEAR GITHUB TOKEN
+        run : export GITHUB_TOKEN=
+      - name: USE GH AS CREDENTIAL HELPER
         run: |
-          git config --global 'credential.https://github.com.helper' '' && \
-          git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential' && \
-          gh auth login --with-token
+          git config --global 'credential.https://github.com.helper' ''
+          git config --global -add 'credential.https://github.com.helper' '!gh auth git-credential'
+      - name: CLI
+        run: gh auth login --with-token
       #- name: RUN
       #  run: ./prepare.pl
