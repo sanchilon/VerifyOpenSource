@@ -15,4 +15,4 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: RUN
-        run: /home/runner/work/VerifyOpenSource/VerifyOpenSource/./prepare.pl
+        run: ./VerifyOpenSource/prepare.pl
