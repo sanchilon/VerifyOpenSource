@@ -30,8 +30,6 @@ jobs:
           rm -rf ./VerifyOpenSource/OntarioVerify/.github && \
           ls -al ./VerifyOpenSource && \
           cp -R ./VerifyOpenSource/openverify ./VerifyOpenSource/OntarioVerify && \
-          ./VerifyOpenSource/OntarioVerify/openverify/transform.linux.sh && \
-          ./VerifyOpenSource/OntarioVerify/openverify/transform.linux.sh && \
           ./VerifyOpenSource/OntarioVerify/openverify/transform.linux.sh
       - name: PUSH
         run: cd ./VerifyOpenSource && git switch -C test1 && git push -u origin test1
