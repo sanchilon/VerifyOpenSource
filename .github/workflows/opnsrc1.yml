@@ -16,9 +16,9 @@ jobs:
       - name: RUN
         env:
           TOKEN: ${{ secrets.PAT }}
+          UID: ${{ GITHUB_ACTOR }}
         run: |
-          echo $TOKEN | gh auth login --with-token
-          git submodule add https://github.com/ongov/OntarioVerify  && \
+          git submodule add https://"$UID":"$TOKEN"@github.com/ongov/OntarioVerify  && \
           cd OntarioVerify  && \
           git switch -C main origin/main  && \
           git pull --rebase origin main  && \
