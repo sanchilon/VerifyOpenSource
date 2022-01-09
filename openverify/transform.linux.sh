@@ -30,6 +30,8 @@ function replace_inside_files {
     files=$(grep --exclude-dir=builds \
                   --exclude-dir=openverify/sources \
                   --exclude=transform.sh \
+                --exclude=transform.linux.sh \
+                --exclude=transform.mac.sh \
                   --exclude=prepare.pl \
                   --exclude=README.md \
                   --exclude=README-fr.md \
@@ -127,6 +129,8 @@ files=$(grep '--exclude-dir=android/builds' \
                 '--exclude-dir=openverify/sources' \
                  '--exclude=prepare.pl' \
                 '--exclude=transform.sh' \
+                '--exclude=transform.linux.sh' \
+                '--exclude=transform.mac.sh' \
                 '--exclude-dir=node_modules' \
                 '--exclude-dir=ios/Pods' \
                 '--exclude-dir=.git' \
