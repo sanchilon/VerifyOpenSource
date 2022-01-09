@@ -17,10 +17,10 @@ jobs:
       - name: CLEAR GITHUB TOKEN
         run : export GITHUB_TOKEN=
       - name: USE GH AS CREDENTIAL HELPER
-        run: gh auth setup-git -h github.com
-        #run: |
-        #  git config --global 'credential.https://github.com.helper' ''
-        #  git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
+        #run: gh auth setup-git -h github.com
+        run: |
+          git config --global 'credential.https://github.com.helper' ''
+          git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
       - name: CLI
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
