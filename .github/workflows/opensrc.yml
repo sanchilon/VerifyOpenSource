@@ -30,7 +30,4 @@ jobs:
           rm -rf ./a/OntarioVerify/.github && \
           ls -al ./a && \
           cp -R ./a/openverify ./a/OntarioVerify && \
-          #./a/OntarioVerify/openverify/transform.linux.sh && \
-          #./a/OntarioVerify/openverify/transform.linux.sh && \
-          #./a/OntarioVerify/openverify/transform.linux.sh && \
           ls -al ./a/OntarioVerify
