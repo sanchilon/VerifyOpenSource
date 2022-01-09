@@ -11,26 +11,26 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: sanchilon/VerifyOpenSource
-          path: ./a
+          path: ./VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: Checkout OntarioVerify
         uses: actions/checkout@v2
         with:
           repository: ongov/OntarioVerify
-          path: ./b
+          path: ./OntarioVerify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: LIST
-        run: ls -al ./a && ls -al ./b
+        run: ls -al ./VerifyOpenSource && ls -al ./OntarioVerify
       - name: RUN
         run: |
-          cp -R ./b ./a/OntarioVerify && \
-          rm -rf ./a/OntarioVerify/.git && \
-          rm -rf ./a/OntarioVerify/.github && \
-          ls -al ./a && \
-          cp -R ./a/openverify ./a/OntarioVerify && \
-          ls -al ./a/OntarioVerify/openverify
+          cp -R ./OntarioVerify ./VerifyOpenSource/OntarioVerify && \
+          rm -rf ./VerifyOpenSource/OntarioVerify/.git && \
+          rm -rf ./VerifyOpenSource/OntarioVerify/.github && \
+          ls -al ./VerifyOpenSource && \
+          cp -R ./VerifyOpenSource/openverify ./VerifyOpenSource/OntarioVerify && \
+          ls -al ./VerifyOpenSource/OntarioVerify/openverify
       - name: PUSH
-        run: ls -al ./a/VerifyOpenSource
+        run: cd ./VerifyOpenSource && git remote -v
           
