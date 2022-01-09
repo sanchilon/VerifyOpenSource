@@ -19,9 +19,8 @@ jobs:
         run : export GITHUB_TOKEN=
       - name: TOUCHFILE
         run: |
-           cat < EOF > tt
-           "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"
-           EOF
+           touch tt
+           echo "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" > tt 
       - name: USE GH AS CREDENTIAL HELPER
         run: |
           git config --global 'credential.https://github.com.helper' ''
