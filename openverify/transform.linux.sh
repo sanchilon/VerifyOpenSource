@@ -44,7 +44,7 @@ function replace_inside_files {
         IFS=$'\n'       # make newlines the only separator
         set -f          # disable globbing
         for file in $files; do
-            sed -i "" "s~${find}~${replace_with}~g" "$file"
+            sed -i "s~${find}~${replace_with}~g" "$file"
         done
         IFS=''
     fi
@@ -75,9 +75,9 @@ replace "ontario_base_logo" "openverify_base_logo"
 replace "ontario_camera_logo" "openverify_camera_logo"
 replace "ontario-icon-alert-error" "openverify-icon-alert-error"
 replace "ontario_base_logo_dark" "openverify_base_logo_dark"
-sed -i "" "s~# Firebase~~g" ".gitignore"
-sed -i "" "s~/ios/GoogleService-Info.plist~~g" ".gitignore"
-sed -i "" "s~/android/app/google-services.json~~g" ".gitignore"
+sed -i  "s~# Firebase~~g" ".gitignore"
+sed -i  "s~/ios/GoogleService-Info.plist~~g" ".gitignore"
+sed -i  "s~/android/app/google-services.json~~g" ".gitignore"
 rename_files "ca" "openverify" ""
 rename_files "ontario" "replace" ""
 rename_files "verify" "me" ""
@@ -104,7 +104,7 @@ cp -R openverify/sources/android/app/src/main/res/mipmap-xxhdpi/*.png android/ap
 cp -R openverify/sources/android/app/src/main/res/mipmap-xxxhdpi/*.png android/app/src/main/res/mipmap-xxxhdpi/
 cp -R openverify/sources/ios/OpenVerify/Images.xcassets ios/OpenVerify/
 cp openverify/sources/ios/*.plist ios/
-sed -i "" "s~Open Verify~VérifOuverte~g" src/translations/fr.json
+sed -i  "s~Open Verify~VérifOuverte~g" src/translations/fr.json
 
 STAR_COMMENT_LICENSE=$(cat <<EOF
 /*
