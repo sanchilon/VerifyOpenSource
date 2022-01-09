@@ -11,8 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: sanchilon/VerifyOpenSource
-          path: ./VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: RUN
-        run: ./VerifyOpenSource/prepare.pl
+        run: ./prepare.pl
