@@ -1,36 +1,32 @@
-# This is a basic workflow to help you get started with Actions
-
 name: OpnSrc1
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  opensrc:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    environment: WF_Env
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: CONFIG
+        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+        with:
+          repository: sanchilon/VerifyOpenSource
+          path: ./VerifyOpenSource
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      - name: RUN
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          rm -rf OntarioVerify && \
+          git rm --cached -rf OntarioVerify  && \
+          rm -rf .git/modules && rm -f ./gitmodules  && \
+          git submodule add https://github.com/ongov/OntarioVerify  && \
+          cd OntarioVerify  && \
+          git switch -C main origin/main  && \
+          git pull --rebase origin main  && \
+          rm -rf .git && \
+          rm -rf .github && \
+          cp -R ../openverify . && \
+          ./openverify/transform.linux.sh && \
+          ./openverify/transform.linux.sh && \
+          ./openverify/transform.linux.sh && \
+          rm -rf openverify
