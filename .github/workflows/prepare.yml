@@ -21,9 +21,9 @@ jobs:
         run: |
           git config --global 'credential.https://github.com.helper' ''
           git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
-      #- name: CLI
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  run: gh auth login --with-token
+      - name: CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh auth login
       #- name: RUN
       #  run: ./prepare.pl
