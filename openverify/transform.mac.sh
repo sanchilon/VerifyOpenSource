@@ -57,7 +57,7 @@ function replace {
     rename_files "$find" "$replace_with" "1"
 }
 BACKUP_FOLDER=".git-backup-$(date "+%Y%m%d%H%M%S")"
-mv .git "../${BACKUP_FOLDER}"
+#mv .git "../${BACKUP_FOLDER}"
 replace "Verify Ontario" "Open Verify"
 replace "VerifyOntario" "OpenVerify"
 replace "OntarioVerify" "OpenVerify"
@@ -147,7 +147,7 @@ if [[ $files ]]; then
     done
 fi
 
-cp -R "../${BACKUP_FOLDER}" ./.git
+#cp -R "../${BACKUP_FOLDER}" ./.git
 
 #yarn
 #yarn prettier -w --bracket-same-line 'src' '!src/__mocks__'
