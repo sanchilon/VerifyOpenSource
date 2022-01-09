@@ -31,6 +31,6 @@ jobs:
           ls -al ./a && \
           cp -R ./a/openverify ./a/OntarioVerify && \
           ls -al ./a/OntarioVerify/openverify
-      -name: PUSH
+      - name: PUSH
         run: git remote -v
           
