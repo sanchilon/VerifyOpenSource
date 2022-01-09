@@ -1,7 +1,7 @@
 name: Prepare
 on:
   workflow_dispatch:
-permissions: read-all|write-all
+
 jobs:
   opensrc:
     runs-on: ubuntu-latest
@@ -9,22 +9,25 @@ jobs:
     steps:
       #- name: CONFIG
       #  run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - name: CHECKOUT
-        uses: actions/checkout@v2
-        with:
-          repository: sanchilon/VerifyOpenSource
-          ref: refs/heads/main
-          token: ${{ secrets.PAT }}
+      #- name: CHECKOUT
+      #  uses: actions/checkout@v2
+      #  with:
+      #    repository: sanchilon/VerifyOpenSource
+      #    ref: refs/heads/main
+      #    token: ${{ secrets.PAT }}
       - name: CLEAR GITHUB TOKEN
-        run : export GITHUB_TOKEN=
-      - name: USE GH AS CREDENTIAL HELPER
-        #run: gh auth setup-git -h github.com
-        run: |
+        run : |
+          export GITHUB_TOKEN=
           git config --global 'credential.https://github.com.helper' ''
           git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
-      - name: CLI
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh auth login --with-token
+          gh auth login --with-token
+      #- name: USE GH AS CREDENTIAL HELPER
+      #  run: |
+      #    git config --global 'credential.https://github.com.helper' ''
+      #    git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
+      #- name: CLI
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  run: gh auth login --with-token
       #- name: RUN
       #  run: ./prepare.pl
