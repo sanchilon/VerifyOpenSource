@@ -1,13 +1,14 @@
 name: Prepare
 on:
   workflow_dispatch:
+permissions: read-all|write-all
 jobs:
   opensrc:
     runs-on: ubuntu-latest
     environment: WF_Env
     steps:
-      - name: CONFIG
-        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
+      #- name: CONFIG
+      #  run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - name: CHECKOUT
         uses: actions/checkout@v2
         with:
