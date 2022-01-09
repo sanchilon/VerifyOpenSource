@@ -18,7 +18,7 @@ jobs:
           TOKEN: ${{ secrets.PAT }}
           UID: ${{ GITHUB_ACTOR }}
         run: |
-          git submodule add https://"$UID":"$TOKEN"@github.com/ongov/OntarioVerify  && \
+          git submodule add https://${{UID}}:${{TOKEN}}@github.com/ongov/OntarioVerify  && \
           cd OntarioVerify  && \
           git switch -C main origin/main  && \
           git pull --rebase origin main  && \
