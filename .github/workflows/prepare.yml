@@ -14,4 +14,4 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: RUN
-        run: git remote -v
+        run: ./prepare.pl
