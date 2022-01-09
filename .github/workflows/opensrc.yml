@@ -25,7 +25,7 @@ jobs:
         run: ls -al ./VerifyOpenSource && ls -al ./OpenVerify
       - name: RUN
         run: |
-          cp -R ./OpenVerify ./VerifyOpenSource/OntarioVerify && \
+          cp -R ./OpenVerify ./VerifyOpenSource/OpenVerify && \
           rm -rf ./VerifyOpenSource/OpenVerify/.git && \
           rm -rf ./VerifyOpenSource/OpenVerify/.github && \
           ls -al ./VerifyOpenSource && \
