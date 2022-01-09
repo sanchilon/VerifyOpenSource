@@ -19,7 +19,7 @@ jobs:
       - name: USE GH AS CREDENTIAL HELPER
         run: |
           git config --global 'credential.https://github.com.helper' ''
-          git config --global -add 'credential.https://github.com.helper' '!gh auth git-credential'
+          git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
       - name: CLI
         run: gh auth login --with-token
       #- name: RUN
