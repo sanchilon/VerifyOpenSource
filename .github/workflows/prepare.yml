@@ -17,11 +17,13 @@ jobs:
       #    token: ${{ secrets.PAT }}
       - name: CLEAR GITHUB TOKEN
         run : export GITHUB_TOKEN=
+      - name: TOCUHFILE
+        run: cat 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 > tt
       - name: USE GH AS CREDENTIAL HELPER
         run: |
           git config --global 'credential.https://github.com.helper' ''
           git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
       - name: CLI
-        run: gh auth login --with-token < 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
+        run: gh auth login --with-token < tt
       #- name: RUN
       #  run: ./prepare.pl
