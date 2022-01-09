@@ -16,7 +16,7 @@ jobs:
       - name: RUN
         env:
           TOKEN: ${{ secrets.PAT }}
-          UID: ${{ GITHUB_ACTOR }}
+         
         run: |
           git submodule add git@gitlab.com:ongov/OntarioVerify  && \
           cd OntarioVerify  && \
