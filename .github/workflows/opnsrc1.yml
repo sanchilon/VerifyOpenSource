@@ -15,9 +15,6 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: RUN
         run: |
-          rm -rf OntarioVerify && \
-          git rm --cached -rf OntarioVerify  && \
-          rm -rf .git/modules && rm -f ./gitmodules  && \
           git submodule add https://github.com/ongov/OntarioVerify  && \
           cd OntarioVerify  && \
           git switch -C main origin/main  && \
