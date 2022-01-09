@@ -14,7 +14,10 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: RUN
+        env:
+          TOKEN: ${{ secrets.PAT }}
         run: |
+          gh auth login --with-token "$TOKEN"
           git submodule add https://github.com/ongov/OntarioVerify  && \
           cd OntarioVerify  && \
           git switch -C main origin/main  && \
