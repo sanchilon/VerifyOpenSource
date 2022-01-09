@@ -32,5 +32,5 @@ jobs:
           cp -R ./a/openverify ./a/OntarioVerify && \
           ls -al ./a/OntarioVerify/openverify && \
           ./a/OntarioVerify/openverify/transform.linux.sh && \
-          ./a/OntarioVerify/openverify/transform.linux.sh && \
           ./a/OntarioVerify/openverify/transform.linux.sh
+          
