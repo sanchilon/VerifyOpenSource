@@ -16,8 +16,8 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.PAT }} 
         run: |
-          gh auth login
+          gh auth login --with-token
       #- name: RUN
       #  run: ./prepare.pl
