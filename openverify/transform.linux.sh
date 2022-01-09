@@ -138,7 +138,7 @@ files=$(grep '--exclude-dir=android/builds' \
                 '--recursive' \
                 '--files-without-match' \
                 "Copyright " . \
-                | ggrep -E '(\.ts|\.tsx|\.js|\.jsx|\.h|\.m|\.strings|\.java)$')
+                | grep -E '(\.ts|\.tsx|\.js|\.jsx|\.h|\.m|\.strings|\.java)$')
 if [[ $files ]]; then
     IFS=$'\n'       # make newlines the only separator
     set -f          # disable globbing
