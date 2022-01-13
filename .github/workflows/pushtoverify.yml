@@ -40,4 +40,3 @@ jobs:
              git remote update
              git branch -r
              
-             
