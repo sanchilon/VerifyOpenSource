@@ -33,12 +33,12 @@ jobs:
       #    ./OpenVerify/openverify/transform.linux.sh && \
       #    cp -R ./OpenVerify ./VerifyOpenSource/OpenVerify && \
       #    rm -rf ./VerifyOpenSource/OpenVerify/openverify
-      - name: PUSH
-        run: |
-             cd ./OpenVerify && \
-             git remote add -f opnsrc https://github.com/ongov/Verify.git
-             git remote update
-             git branch -r
-             git switch -C opensource-fake-branch
-             git push -u opnsrc opensource-fake-branch
+     # - name: PUSH
+     #   run: |
+     #        cd ./OpenVerify && \
+     #        git remote add -f opnsrc https://github.com/ongov/Verify.git
+     #        git remote update
+     #        git branch -r
+     #        git switch -C opensource-fake-branch
+     #        git push -u opnsrc opensource-fake-branch
              
