@@ -20,7 +20,7 @@ jobs:
           repository: ongov/OntarioVerify
           path: ./OpenVerify
           ref: refs/heads/main
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT_REPO }}
       #- name: LIST
       #  run: ls -al ./VerifyOpenSource && ls -al ./OpenVerify
       #- name: RUN
