@@ -13,7 +13,7 @@ jobs:
           repository: sanchilon/VerifyOpenSource
           path: ./VerifyOpenSource
           ref: refs/heads/main
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT_REPO }}
       - name: Checkout OntarioVerify
         uses: actions/checkout@v2
         with:
