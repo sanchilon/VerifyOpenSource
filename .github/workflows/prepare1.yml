@@ -24,6 +24,6 @@ jobs:
       - name: CLONE VERIFYOPEN
         run: git clone https://github.com/sanchilon/VerifyOpenSource
       - name: PREPARE
-        run: ./VerifyOpenSource/prepare.pl
+        run: cd VerifyOpenSource && ./prepare.pl
 
     
