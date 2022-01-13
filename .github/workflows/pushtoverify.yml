@@ -36,5 +36,8 @@ jobs:
       - name: PUSH
         run: |
              cd ./OpenVerify && \
+             git remote add -f opnsrc https://github.com/ongov/OpenVerify.git
+             git remote update
              git branch -r
+             
              
