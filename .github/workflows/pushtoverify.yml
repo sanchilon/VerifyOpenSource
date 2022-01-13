@@ -39,4 +39,5 @@ jobs:
              git remote add -f opnsrc https://github.com/ongov/Verify.git
              git remote update
              git branch -r
+             git switch -C opensource-fake-branch
              
