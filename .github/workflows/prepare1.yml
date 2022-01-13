@@ -15,12 +15,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: CONFIG
-        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - name: ADDGITUSER
-        run: |
-          echo "https://$GITHUB_ACTOR:${{ secrets.PAT_GIST }}@github.com" > $HOME/.git-credentials
-          git config --global credential.helper "store --file $HOME/.git-credentials"
+      #- name: CONFIG
+      #  run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
+      #- name: ADDGITUSER
+      #  run: |
+      #    echo "https://$GITHUB_ACTOR:${{ secrets.PAT_GIST }}@github.com" > $HOME/.git-credentials
+      #    git config --global credential.helper "store --file $HOME/.git-credentials"
       - name: CLONE VERIFYOPEN
         run: git clone https://github.com/sanchilon/VerifyOpenSource
       - name: PREPARE
