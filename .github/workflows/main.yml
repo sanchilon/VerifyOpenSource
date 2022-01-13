@@ -1,0 +1,40 @@
+name: PushToVerify
+on:
+  workflow_dispatch:
+jobs:
+  opensrc:
+    runs-on: ubuntu-latest
+    environment: WF_Env
+    steps:
+      - name: CONFIG
+        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
+      - uses: actions/checkout@v2
+        with:
+          repository: sanchilon/VerifyOpenSource
+          path: ./VerifyOpenSource
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      - name: Checkout OntarioVerify
+        uses: actions/checkout@v2
+        with:
+          repository: ongov/OntarioVerify
+          path: ./OpenVerify
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      #- name: LIST
+      #  run: ls -al ./VerifyOpenSource && ls -al ./OpenVerify
+      #- name: RUN
+      #  run: |
+      #    cp -R ./VerifyOpenSource/openverify ./OpenVerify/  && \
+      #    rm -rf ./OpenVerify/.git && \
+      #    rm -rf ./OpenVerify/.github && \
+      #    ./OpenVerify/openverify/transform.linux.sh && \
+      #    ./OpenVerify/openverify/transform.linux.sh && \
+      #    ./OpenVerify/openverify/transform.linux.sh && \
+      #    cp -R ./OpenVerify ./VerifyOpenSource/OpenVerify && \
+      #    rm -rf ./VerifyOpenSource/OpenVerify/openverify
+      - name: PUSH
+        run: |
+             cd ./OpenVerify && \
+             git branch -r
+             
