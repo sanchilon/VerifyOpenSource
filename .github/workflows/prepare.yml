@@ -22,6 +22,6 @@ jobs:
           git config --global 'credential.https://github.com.helper' ''
           git config --global --add 'credential.https://github.com.helper' '!gh auth git-credential'
       - name: RUN
-        run: git clone https://github.com/ongov/OntarioVerify
+        run: git clone https://github.com/ongov/OpenVerify
       #- name: RUN
       #  run: ./prepare.pl

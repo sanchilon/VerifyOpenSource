@@ -18,8 +18,8 @@ jobs:
           TOKEN: ${{ secrets.PAT }}
          
         run: |
-          git submodule add git@gitlab.com:ongov/OntarioVerify  && \
-          cd OntarioVerify  && \
+          git submodule add git@gitlab.com:ongov/OpenVerify  && \
+          cd OpenVerify  && \
           git switch -C main origin/main  && \
           git pull --rebase origin main  && \
           rm -rf .git && \
